@@ -5,8 +5,6 @@ for _ in range(T):
     N = int(input())
     newFace = [list(map(int, input().split())) for _ in range(N)]
     newFace.sort()
-    minPaper = min(newFace, key=lambda x: x[0])
-    minTalk = min(newFace, key=lambda x: x[1])
     ans = 0
     buf = newFace[0][1]
     for i in range(N):
