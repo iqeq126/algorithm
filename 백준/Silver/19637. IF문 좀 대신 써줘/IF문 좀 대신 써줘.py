@@ -5,12 +5,9 @@ lst = []
 for _ in range(N):
     level, power_range = input().split()
     lst.append([level,int(power_range)])
-
 for _ in range(M):
     player = int(input())
-    l = 0
-    r = N-1
-    mid = (N-1)//2
+    l,r,mid = 0, N-1, (N-1)//2
     while l <= r:
         mid = (l + r) // 2
         if player <= lst[mid][1]:
