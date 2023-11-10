@@ -10,12 +10,6 @@ for _ in range(M):
     player = int(input())
     l = 0
     r = N-1
-    if lst[l][1] > player:
-        print(lst[0][0])
-        continue
-    if lst[r][1] < player:
-        print(lst[r][0])
-        continue
     mid = (N-1)//2
     while l <= r:
         mid = (l + r) // 2
