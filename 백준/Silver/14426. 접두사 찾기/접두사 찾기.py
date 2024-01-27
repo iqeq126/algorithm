@@ -2,7 +2,7 @@ import sys
 input = sys.stdin.readline
 N, M = map(int, input().split())
 sentence = sorted(input().strip() for _ in range(N))
-prefix = [input().strip() for _ in range(M)]
+prefix = sorted([input().strip() for _ in range(M)])
 
 res = 0
 for pre in prefix:
