@@ -9,17 +9,15 @@ def insert(dic, q):
         if item not in dic:
             dic[item] = {}
         insert(dic[item], q)
-    else:
-        return
+    return
 def printDictionary(dic, depth=0):
     if dic:
         for branch in sorted(dic.keys()):
             print("--" * depth + branch)
             printDictionary(dic[branch], depth+1)
-    else:
-        return
+    return
 for i in range(N):
     q = deque(input().split())
-    M = int(q.popleft())
+    q.popleft()
     insert(dictionary, q)
 printDictionary(dictionary)
