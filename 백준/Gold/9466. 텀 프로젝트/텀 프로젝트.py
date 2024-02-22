@@ -1,6 +1,6 @@
 import sys
 sys.setrecursionlimit(10 ** 6)
-input = sys.stdin.readline
+input, print = sys.stdin.readline, sys.stdout.write
 t = int(input())
 def termproject():
     def dfs(i, students, visited, cycle):
@@ -21,6 +21,6 @@ def termproject():
             cycleList = dfs(i, students, visited, [])
             if cycleList:
                 cycle += len(cycleList)
-    print(n-cycle)
+    print(f"{n-cycle}\n")
 for _ in range(t):
     termproject()
