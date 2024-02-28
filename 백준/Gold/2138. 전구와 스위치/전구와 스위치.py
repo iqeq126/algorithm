@@ -1,9 +1,9 @@
-import sys, copy
+import sys
 input = sys.stdin.readline
 # 0 : HIGH, 1 : LOW
 n = int(input())
 cur_state = list(map(bool, map(int, input().rstrip())))
-copied_cur_state = copy.deepcopy(cur_state)
+copied_cur_state = cur_state.copy()
 res_state = list(map(bool, map(int, input().rstrip())))
 
 def bulb_switch(bulb, state, max_size=n):
