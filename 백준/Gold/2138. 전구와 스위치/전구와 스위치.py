@@ -21,6 +21,7 @@ def switch_times(cur_state, res_state, max_size=n, cnt = 0):
 
 # 0번째 스위치를 누르는 경우
 result = sys.maxsize
+# 0, 1 switch 연산
 cur_state[0], cur_state[1] = (cur_state[0] + 1) % 2, (cur_state[1] + 1) % 2
 res, cur_state = switch_times(cur_state, res_state)
 if cur_state == res_state: result = min(res+1, result)
