@@ -1,15 +1,16 @@
 import sys
 from collections import deque, defaultdict
 input = sys.stdin.readline
-dic = defaultdict(list)
-N = int(input())
-dic[1] = [1]
-def setDict():
+def setDict(N):
+    dic = defaultdict(list)
+    dic[1] = [1]
     for _ in range(N-1):
         x, y = map(int, input().split())
         dic[x].append(y)
         dic[y].append(x)
-def getParent():
+    return dic
+def getParent(N):
+    dic = setDict(N)
     q = deque([1])
     parent = defaultdict(int)
     while q:
@@ -20,5 +21,4 @@ def getParent():
                 q.append(i)
     for _ in range(2, N+1):
         print(parent[_])
-setDict()
-getParent()
+getParent(int(input()))
