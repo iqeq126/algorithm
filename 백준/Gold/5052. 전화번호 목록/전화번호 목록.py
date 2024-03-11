@@ -9,8 +9,8 @@ def is_valid():
     for i in range(case-1):
         area_code = len(phone_book[i])
         if phone_book[i+1][:area_code] == phone_book[i]:
-            return "NO"
-    return "YES"
+            return "NO\n"
+    return "YES\n"
 
 for _ in range(int(input())):
-    print(f"{is_valid()}\n")
+    print(is_valid())
