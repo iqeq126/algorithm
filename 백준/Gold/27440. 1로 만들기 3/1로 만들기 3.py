@@ -3,7 +3,7 @@ def bfs():
     n = int(input())
     q = deque()
     q.append((n, 0))
-    visited = {}
+    visited = dict()
     while True:
         x, res = q.popleft()
         if x == 1:
