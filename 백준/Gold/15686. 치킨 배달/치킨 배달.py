@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 n, m = map(int, input().split())
 houses, chicken_stores, dists = [], [], []
 global min_dist
