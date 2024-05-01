@@ -1,25 +1,26 @@
 import sys
 input = sys.stdin.readline
-n = int(input())
-cy, cx = n//2, n//2
-board = [list(map(int, input().split())) for _ in range(n)]
-dyx = ((0,-1),(1,0),(0,1),(-1,0))
 def hurricane(proportion):
     return list(reversed(list(zip(*proportion))))
-s = [0 for _ in range(5)] * 4
-s[0] = [  [0, 0,   0.02, 0,    0],
-        [0, 0.1, 0.07, 0.01, 0],
-        [0.05, 0, 0, 0, 0],
-        [0, 0.1, 0.07, 0.01, 0],
-        [0, 0,   0.02, 0,    0]
-        ]
-s[1] = hurricane(s[0])
-s[2] = hurricane(s[1])
-s[3] = hurricane(s[2])
-# 허리케인 이동 적용
-a = ((2,1),(3,2),(2,3),(1,2))
 
 def get():
+    n = int(input())
+    cy, cx = n // 2, n // 2
+    board = [list(map(int, input().split())) for _ in range(n)]
+    dyx = ((0, -1), (1, 0), (0, 1), (-1, 0))
+
+    s = [0 for _ in range(5)] * 4
+    s[0] = [[0, 0, 0.02, 0, 0],
+            [0, 0.1, 0.07, 0.01, 0],
+            [0.05, 0, 0, 0, 0],
+            [0, 0.1, 0.07, 0.01, 0],
+            [0, 0, 0.02, 0, 0]
+            ]
+    s[1] = hurricane(s[0])
+    s[2] = hurricane(s[1])
+    s[3] = hurricane(s[2])
+    # 허리케인 이동 적용
+    a = ((2, 1), (3, 2), (2, 3), (1, 2))
     res = 0
     ny, nx = cy, cx
     direction, flag, diameter = 0, 2, 0
@@ -54,8 +55,6 @@ def get():
             if diameter == flag:
                 diameter, flag = 0, flag + 2
 
-
     return res
-
 
 print(get())
