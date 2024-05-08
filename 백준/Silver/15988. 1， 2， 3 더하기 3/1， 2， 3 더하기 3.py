@@ -7,4 +7,4 @@ for i in range(4, 1000004):
 t = int(input())
 for i in range(t):
     n = int(input())
-    print(f"{dp[n] % MOD}\n")
+    print(f"{dp[n]}\n")
