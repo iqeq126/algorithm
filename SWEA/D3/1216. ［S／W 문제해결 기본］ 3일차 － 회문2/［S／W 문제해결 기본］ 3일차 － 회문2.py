@@ -17,6 +17,7 @@ for _ in range(1, 11):
     board = [list(input()) for _ in range(100)]
 
 
+
     for i in range(100):
         for j in range(100):
             word = []
@@ -27,12 +28,10 @@ for _ in range(1, 11):
                     continue
                 res = is_palindrome(word, res)
 
-    for j in range(100):
-        for i in range(100):
             word = []
             for k in range(100):
-                if is_valid(i + k):
-                    word.append(board[i + k][j])
+                if is_valid(j + k):
+                    word.append(board[j + k][i])
                 else:
                     continue
                 res = is_palindrome(word, res)
