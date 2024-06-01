@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10**4)
+sys.setrecursionlimit(10**5)
 r, c = map(int, sys.stdin.readline().split())
 res = 0
 board = list(list(sys.stdin.readline().rstrip('\n')) for _ in range(r))
