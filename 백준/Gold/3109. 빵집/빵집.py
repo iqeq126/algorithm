@@ -10,20 +10,19 @@ def is_valid(y, x):
 
 
 def dfs(y, x):
-    if x == c-1:
+    if x == c:
         return True
 
-    nx = x+1
     for dy in (-1,0,1):
         ny = y+dy
-        if is_valid(ny, nx) and board[ny][nx] == '.':
-            board[ny][nx] = 'x'
-            if dfs(ny, nx):
+        if is_valid(ny, x) and board[ny][x] == '.':
+            board[ny][x] = 'x'
+            if dfs(ny, x+1):
                 return True
     return False
 
 
 for y in range(r):
-    res += dfs(y, 0)
+    res += dfs(y, 1)
 
 print(res)
