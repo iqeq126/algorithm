@@ -31,6 +31,6 @@ while q:
         if dependency[nxt] == 0:
             q.append(nxt)
 
-total_build_time = total_build_time[1:]
-for t in total_build_time:
-    print(f"{t}\n")
+
+for i in range(1, N+1):
+    print(f"{total_build_time[i]}\n")
