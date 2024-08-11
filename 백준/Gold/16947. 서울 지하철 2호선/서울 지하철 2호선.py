@@ -1,6 +1,6 @@
 import sys
 MAX = 3001
-sys.setrecursionlimit(MAX*2)
+sys.setrecursionlimit(10 ** 6)
 from collections import deque, defaultdict
 input, print = sys.stdin.readline, sys.stdout.write
 n = int(input())
