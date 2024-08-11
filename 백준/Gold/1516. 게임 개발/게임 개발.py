@@ -1,4 +1,4 @@
-import sys, heapq
+import sys
 from collections import deque, defaultdict
 input, print = sys.stdin.readline, sys.stdout.write
 N = int(input())
@@ -20,6 +20,7 @@ q = deque()
 for i in range(1, N+1):
     if dependency[i] == 0:
         q.append(i)
+        # 초기 빌드 시간
         total_build_time[i] = build_time[i]
 
 while q:
@@ -28,9 +29,9 @@ while q:
         total_build_time[nxt] = max(total_build_time[nxt],
                                     total_build_time[now] + build_time[nxt])
         dependency[nxt] -= 1
+        # 의존성이 없는 경우 다음 노드 탐색
         if dependency[nxt] == 0:
             q.append(nxt)
-
 
 for i in range(1, N+1):
     print(f"{total_build_time[i]}\n")
