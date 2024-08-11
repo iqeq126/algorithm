@@ -1,15 +1,16 @@
 import sys
-sys.setrecursionlimit(10**5)
+MAX = 3001
+sys.setrecursionlimit(MAX*2)
 from collections import deque, defaultdict
 input, print = sys.stdin.readline, sys.stdout.write
 n = int(input())
 q = deque()
 isCycle = False
 station = defaultdict(list)
-visited = [False] * (n+1)
-prev = [False] * (n+1)
-cycle_list = [False] * (n+1)
-dist = [0] * (n+1)
+visited = [False] * MAX
+prev = [False] * MAX
+cycle_list = [False] * MAX
+dist = [0] * MAX
 for _ in range(n):
     s, e = map(int, input().split())
     station[s].append(e)
